@@ -25,3 +25,72 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 1s ease-out forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 1s ease-out forwards;
+}
+
+/* Animatie pentru rotirea spre dreapta */
+@keyframes spin-right {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animatie pentru rotirea spre stanga */
+@keyframes spin-left {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+/* Adaugă clasele animate la elemente pentru animație */
+.animate-spin-right {
+  animation: spin-right 4s linear infinite;
+}
+
+.animate-spin-left {
+  animation: spin-left 4s linear infinite;
+}
+
+.carousel-root {
+  height: 100%;
+  .carousel-slider,
+  .slider-wrapper,
+  .slide,
+  .slider {
+    height: 100%; /* Înălțime de 100% a ferestrei vizibile (viewport) */
+  }
+}
