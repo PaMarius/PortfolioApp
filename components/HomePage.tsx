@@ -44,7 +44,7 @@ export const HomePage = ({ themeDark }: HomePageProps) => {
     <div className="w-full h-bodyContent flex flex-col justify-center items-center gap-2 text-4xl relative">
       <div className="flex flex-col justify-center items-center gap-3">
         <p className="text-8xl leading-none font-medium">Hello</p>
-        <p className="font-medium">I am Mariussss</p>
+        <p className="font-medium">I am Marius</p>
         <p className="font-medium">{displayedText}</p>
       </div>
       <div className="flex gap-6 items-center justify-center mt-10">
