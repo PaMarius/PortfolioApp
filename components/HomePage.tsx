@@ -65,7 +65,7 @@ export const HomePage = ({ themeDark }: HomePageProps) => {
         <div className="h-full w-1/2 flex justify-center items-center">
           <div className="bg-white h-3/4 w-3/4 rounded-full flex items-center justify-center hover:animate-spin">
             <Image
-              src="/romania.png"
+              src="./romania.png"
               width={70}
               height={50}
               alt="Picture with my country map"
