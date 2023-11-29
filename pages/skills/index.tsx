@@ -1,4 +1,4 @@
-import { SkillsPage } from "@/components/SkillsPage";
+import { SkillsPage } from "@/components/skills/SkillsPage";
 import { getDarkThemeProps } from "@/utils/getDarkThemeProps";
 import { getStorage } from "@/utils/getStorage";
 import { useState } from "react";

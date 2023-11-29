@@ -13,7 +13,6 @@ export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     setIsMounted(true);
     if (!isDarkTheme && isFirstRender === null) {
-      console.log("merge");
       setDarkTheme(true);
     }
   }, []);

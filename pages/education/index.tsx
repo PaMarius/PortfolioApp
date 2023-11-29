@@ -1,4 +1,4 @@
-import { EducationPage } from "@/components/EducationPage";
+import { EducationPage } from "@/components/education/EducationPage";
 import { getDarkThemeProps } from "@/utils/getDarkThemeProps";
 import { getStorage } from "@/utils/getStorage";
 import { useState } from "react";

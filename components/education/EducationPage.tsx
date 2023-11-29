@@ -1,5 +1,5 @@
 import React, { Dispatch, SetStateAction } from "react";
-import { NewHeader } from "./NewHeader";
+import { Header } from "../Header";
 
 type EducationPageProps = {
   setThemeDark: Dispatch<SetStateAction<boolean | null>>;
@@ -12,7 +12,7 @@ export const EducationPage = ({
 }: EducationPageProps) => {
   return (
     <div className="flex flex-col h-full w-full justify-center items-center">
-      <NewHeader setThemeDark={setThemeDark} themeDark={themeDark} />
+      <Header setThemeDark={setThemeDark} themeDark={themeDark} />
       <div className="w-full h-bodyContent"></div>
     </div>
   );

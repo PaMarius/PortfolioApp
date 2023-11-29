@@ -1,5 +1,5 @@
 import React, { Dispatch, SetStateAction } from "react";
-import { NewHeader } from "../NewHeader";
+import { Header } from "../Header";
 import { ProjectContainer } from "./ProjectContainer";
 import { projects } from "@/constants/projectsContent";
 
@@ -13,9 +13,9 @@ export const ProjectsPage = ({
   themeDark,
 }: ProjectsPageProps) => {
   return (
-    <div className="flex flex-col h-full w-full justify-between items-center">
-      <NewHeader setThemeDark={setThemeDark} themeDark={themeDark} />
-      <div className="w-full h-full flex flex-col overflow-y-auto">
+    <div className="flex flex-col h-full w-full justify-between items-center ">
+      <Header setThemeDark={setThemeDark} themeDark={themeDark} />
+      <div className="w-full h-full flex flex-col ">
         <div className="text-center w-auto font_vivaSans mt-4 font-bold ">
           Personal projects
         </div>

@@ -1,4 +1,4 @@
-import { AboutPage } from "@/components/AboutPage";
+import { AboutPage } from "@/components/about/AboutPage";
 import { getDarkThemeProps } from "@/utils/getDarkThemeProps";
 import { getStorage } from "@/utils/getStorage";
 import { useState } from "react";

@@ -3,12 +3,12 @@ import { downloadFile } from "@/utils/donwloadFile";
 import { useRouter } from "next/router";
 import { useState, Dispatch, SetStateAction } from "react";
 
-type NewHeaderProps = {
+type HeaderProps = {
   setThemeDark: Dispatch<SetStateAction<boolean | null>>;
   themeDark: boolean | null;
 };
 
-export const NewHeader = ({ setThemeDark, themeDark }: NewHeaderProps) => {
+export const Header = ({ setThemeDark, themeDark }: HeaderProps) => {
   const [themeIsDark, setThemeIsDark] = useState<boolean | null>(themeDark);
   const router = useRouter();
   const setDarkTheme = (value: boolean) =>
@@ -16,7 +16,6 @@ export const NewHeader = ({ setThemeDark, themeDark }: NewHeaderProps) => {
 
   const handleRoute = (pathName: string) => router.push(pathName);
 
-  console.log(headerItems);
   return (
     <div className="bg-[#28242c] w-full h-tenPercent flex justify-end items-center pr-6 gap-6 text-xl font-mono">
       {headerItems.map((item, index) => (

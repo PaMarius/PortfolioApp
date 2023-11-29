@@ -1,4 +1,4 @@
-import { ExperiencePage } from "@/components/ExperiencePage";
+import { ExperiencePage } from "@/components/experience/ExperiencePage";
 import { getDarkThemeProps } from "@/utils/getDarkThemeProps";
 import { getStorage } from "@/utils/getStorage";
 import { useState } from "react";

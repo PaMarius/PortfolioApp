@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useEffect, Dispatch, SetStateAction } from "react";
 import { GreetingComponent } from "./GreetingComponent";
-import { NewHeader } from "../NewHeader";
-import { HomePage } from "../HomePage";
+import { Header } from "../Header";
+import { HomePage } from "./HomePage";
 import { getStorage } from "@/utils/getStorage";
 
 type DashboardProps = {
@@ -56,7 +56,7 @@ export const Dashboard = ({ setThemeDark, themeDark }: DashboardProps) => {
             firstRender === null ? "animate-slide-in" : null
           }`}
         >
-          <NewHeader setThemeDark={setThemeDark} themeDark={themeDark} />
+          <Header setThemeDark={setThemeDark} themeDark={themeDark} />
           <HomePage themeDark={themeDark} />
         </div>
       )}

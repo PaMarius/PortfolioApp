@@ -14,7 +14,6 @@ export const ProjectContainer = ({
   project,
   projectName,
 }: ProjectContainerProps) => {
-  const [isHovered, setIsHovered] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
   const images = [
     "/githubApp/landingPage.gif",
@@ -40,12 +39,6 @@ export const ProjectContainer = ({
     return [firstWord, restOfText];
   }
 
-  console.log(
-    extractFirstWordAndRest(
-      "This game is going to highlight the usage of timing events as well as procedurally generating random, correct and incorrect, math equations."
-    )
-  );
-
   const handleIndex = (number: number) => {
     if (number > 0) {
       if (currentImage === images.length - 1) {
@@ -63,8 +56,8 @@ export const ProjectContainer = ({
   };
 
   return (
-    <div className="h-full w-full flex items-center justify-center overflow-y-">
-      <div className="w-3/5 h-[600px] bg-gray-300 shadow-gray-600 shadow-2xl rounded-xl flex flex-col justify-center items-center p-4 gap-2">
+    <div className="h-full w-full flex items-center justify-center">
+      <div className="w-3/5 h-[600px] bg-gray-300 shadow-gray-600 shadow-2xl rounded-xl flex flex-col justify-center items-center p-4 gap-2 ">
         <div className={`text-black font-bold text-lg font-mono`}>
           {capitalizeAndReplace(projectName)}
         </div>
@@ -84,8 +77,6 @@ export const ProjectContainer = ({
                   ? "hover:scale-200"
                   : "hover:scale-150"
               }`}
-              onMouseOver={() => setIsHovered(true)}
-              onMouseOut={() => setIsHovered(false)}
             >
               <Image
                 src={project.content[currentImage].imagePath}
