@@ -12,10 +12,8 @@ export default function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     setIsMounted(true);
-    console.log("works");
     if (!isDarkTheme && isFirstRender === null) {
       setDarkTheme(true);
-      console.log("dont work");
     }
   }, []);
 

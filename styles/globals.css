@@ -58,7 +58,6 @@ body {
   animation: slide-in 1s ease-out forwards;
 }
 
-/* Animatie pentru rotirea spre dreapta */
 @keyframes spin-right {
   0% {
     transform: rotate(0);
@@ -68,7 +67,6 @@ body {
   }
 }
 
-/* Animatie pentru rotirea spre stanga */
 @keyframes spin-left {
   0% {
     transform: rotate(0);
@@ -78,7 +76,6 @@ body {
   }
 }
 
-/* Adaugă clasele animate la elemente pentru animație */
 .animate-spin-right {
   animation: spin-right 4s linear infinite;
 }
@@ -93,7 +90,7 @@ body {
   .slider-wrapper,
   .slide,
   .slider {
-    height: 100%; /* Înălțime de 100% a ferestrei vizibile (viewport) */
+    height: 100%;
   }
 }
 

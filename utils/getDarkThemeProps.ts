@@ -1,6 +1,9 @@
-export const getDarkThemeProps = (isDarkThemeActive: boolean | null) => {
+export const getDarkThemeProps = (
+  isDarkThemeActive: boolean | null,
+  pageLayout: { blackTheme: string; whiteTheme: string }
+) => {
   if (isDarkThemeActive) {
-    return "bg-black text-white transition duration-700 delay-150 ease-in-out";
+    return `${pageLayout.blackTheme} text-white transition duration-700 delay-150 ease-in-out`;
   } else {
     return "bg-white text-black transition duration-700 delay-150 ease-in-out";
   }

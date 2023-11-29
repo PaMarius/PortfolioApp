@@ -1,8 +1,6 @@
 "use client";
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { Header } from "../Header";
-import Image from "next/image";
-import { LeftArrowSVG, RightArrowSVG } from "../SVGs";
 
 type ExperiencePageProps = {
   setThemeDark: Dispatch<SetStateAction<boolean | null>>;

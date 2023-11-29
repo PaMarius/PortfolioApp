@@ -8,8 +8,18 @@ export default function Home() {
 
   const [themeDark, setThemeDark] = useState<boolean | null>(isDarkTheme);
 
+  const pageLayout: { blackTheme: string; whiteTheme: string } = {
+    blackTheme: "bg-black",
+    whiteTheme: "bg-white",
+  };
+
   return (
-    <div className={`h-screen text-center ${getDarkThemeProps(themeDark)}`}>
+    <div
+      className={`h-screen text-center ${getDarkThemeProps(
+        themeDark,
+        pageLayout
+      )}`}
+    >
       <Dashboard setThemeDark={setThemeDark} themeDark={themeDark} />
     </div>
   );

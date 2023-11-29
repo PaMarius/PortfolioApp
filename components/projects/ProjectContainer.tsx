@@ -15,13 +15,6 @@ export const ProjectContainer = ({
   projectName,
 }: ProjectContainerProps) => {
   const [currentImage, setCurrentImage] = useState(0);
-  const images = [
-    "/githubApp/landingPage.gif",
-    "/githubApp/projectMenu.gif",
-    "/githubApp/codeScreen.png",
-    "/githubApp/codeEditorScreen.png",
-    "/githubApp/commitsScreen.png",
-  ];
 
   function capitalizeAndReplace(str: string): string {
     const words = str.split("_");
@@ -41,14 +34,14 @@ export const ProjectContainer = ({
 
   const handleIndex = (number: number) => {
     if (number > 0) {
-      if (currentImage === images.length - 1) {
+      if (currentImage === project.content.length - 1) {
         setCurrentImage(0);
       } else {
         setCurrentImage(currentImage + 1);
       }
     } else {
       if (currentImage === 0) {
-        setCurrentImage(images.length - 1);
+        setCurrentImage(project.content.length - 1);
       } else {
         setCurrentImage(currentImage - 1);
       }

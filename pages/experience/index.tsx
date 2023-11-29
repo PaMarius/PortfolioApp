@@ -7,8 +7,18 @@ export default function Experiencec() {
   const isDarkTheme = getStorage<boolean>("local", "darkTheme", "boolean");
   const [themeDark, setThemeDark] = useState<boolean | null>(isDarkTheme);
 
+  const pageLayout: { blackTheme: string; whiteTheme: string } = {
+    blackTheme: "bg-black",
+    whiteTheme: "bg-white",
+  };
+
   return (
-    <div className={`h-screen text-center ${getDarkThemeProps(themeDark)}`}>
+    <div
+      className={`h-screen text-center ${getDarkThemeProps(
+        themeDark,
+        pageLayout
+      )}`}
+    >
       <ExperiencePage setThemeDark={setThemeDark} themeDark={themeDark} />
     </div>
   );
