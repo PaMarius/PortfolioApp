@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      scale: {
+        "200": "2",
+      },
       colors: {
         "regal-blue": "#243c5a",
       },
@@ -17,7 +20,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontSize: { presentationName: "12rem" },
-      height: { tenPercent: "10%", bodyContent: "90%" },
+      height: { tenPercent: "5vw", bodyContent: "90%" },
       width: { tenPercent: "10%" },
     },
   },

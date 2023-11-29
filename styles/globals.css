@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&family=Open+Sans:wght@300&family=Vina+Sans&display=swap" rel="stylesheet');
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -93,4 +95,20 @@ body {
   .slider {
     height: 100%; /* Înălțime de 100% a ferestrei vizibile (viewport) */
   }
+}
+
+.font_vivaSans {
+  font-family: "Mouse+Memoirs", sans-serif;
+  font-size: 40px;
+}
+
+.imageContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s ease-in-out;
+}
+
+.hidden {
+  transform: translateX(-100%);
 }

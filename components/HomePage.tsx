@@ -8,7 +8,7 @@ import {
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
-type HomePageProps = { themeDark: boolean };
+type HomePageProps = { themeDark: boolean | null };
 
 export const HomePage = ({ themeDark }: HomePageProps) => {
   const socialMedia = {

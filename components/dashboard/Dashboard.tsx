@@ -1,22 +1,25 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Dispatch, SetStateAction } from "react";
 import { GreetingComponent } from "./GreetingComponent";
 import { NewHeader } from "../NewHeader";
 import { HomePage } from "../HomePage";
 import { getStorage } from "@/utils/getStorage";
 
-export const Dashboard = ({ setThemeDark, themeDark, isDarkThemeInitial }) => {
-  console.log(isDarkThemeInitial, "aiciicii");
+type DashboardProps = {
+  setThemeDark: Dispatch<SetStateAction<boolean | null>>;
+  themeDark: boolean | null;
+};
+
+export const Dashboard = ({ setThemeDark, themeDark }: DashboardProps) => {
   const greetings = ["Hello", "Bonjour", "Hola", "Ciao", "Hallo", "Salut"];
+  const isFirstRender = getStorage<boolean>("session", "firstRender");
   const [showHello, setShowHello] = useState(false);
   const [showOtherComponent, setShowOtherComponent] = useState(false);
   const [currentGreetingIndex, setCurrentGreetingIndex] = useState(0);
-  const [firstRender, setFirstRender] = useState<boolean>(true);
-
-  <div className="w-full h-bodyContent">About </div>;
+  const [firstRender] = useState<boolean | null>(isFirstRender);
 
   useEffect(() => {
-    if (firstRender) {
+    if (firstRender === null) {
       setShowHello(true);
       const interval = setInterval(
         () => {
@@ -38,22 +41,9 @@ export const Dashboard = ({ setThemeDark, themeDark, isDarkThemeInitial }) => {
       setShowOtherComponent(true);
     }
   }, [currentGreetingIndex, greetings.length, firstRender]);
-
-  useEffect(() => {
-    const isFirstRender = getStorage("session", "firstRender");
-
-    if (getStorage("session", "firstRender")) {
-      const parsedData = JSON.parse(isFirstRender as string);
-      setFirstRender(parsedData);
-    }
-  }, []);
-
-  const isDarkTheme = getStorage("session", "darkTheme", "boolean");
-  console.log(isDarkTheme);
-
   return (
     <div className="flex h-full w-full justify-center items-center">
-      {showHello && firstRender && (
+      {showHello && firstRender === null && (
         <GreetingComponent
           showHello={showHello}
           greetings={greetings}
@@ -63,23 +53,15 @@ export const Dashboard = ({ setThemeDark, themeDark, isDarkThemeInitial }) => {
       {showOtherComponent && (
         <div
           className={`flex w-full h-full flex-col justify-center items-center ${
-            firstRender ? "animate-slide-in" : null
+            firstRender === null ? "animate-slide-in" : null
           }`}
         >
-          <NewHeader setThemeDark={setThemeDark} isDarkTheme={isDarkTheme} />
+          <NewHeader setThemeDark={setThemeDark} themeDark={themeDark} />
           <HomePage themeDark={themeDark} />
         </div>
       )}
     </div>
   );
-};
-
-export const getServerSideProps = async () => {
-  const isDarkThemeInitial = getStorage("session", "darkTheme", "boolean");
-
-  return {
-    props: { isDarkThemeInitial },
-  };
 };
 
 export default Dashboard;

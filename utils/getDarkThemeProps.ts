@@ -1,4 +1,4 @@
-export const getDarkThemeProps = (isDarkThemeActive: boolean) => {
+export const getDarkThemeProps = (isDarkThemeActive: boolean | null) => {
   if (isDarkThemeActive) {
     return "bg-black text-white transition duration-700 delay-150 ease-in-out";
   } else {

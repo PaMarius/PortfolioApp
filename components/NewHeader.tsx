@@ -1,42 +1,33 @@
-"use client";
-import { getStorage } from "@/utils/getStorage";
+import { headerItems } from "@/constants/header";
+import { downloadFile } from "@/utils/donwloadFile";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useState, Dispatch, SetStateAction } from "react";
 
-export const NewHeader = ({ setThemeDark }) => {
-  const isDarkTheme = getStorage("local", "darkTheme", "boolean");
-  const [themeIsDark, setThemeIsDark] = useState<boolean>(isDarkTheme);
-  console.log(themeIsDark);
+type NewHeaderProps = {
+  setThemeDark: Dispatch<SetStateAction<boolean | null>>;
+  themeDark: boolean | null;
+};
+
+export const NewHeader = ({ setThemeDark, themeDark }: NewHeaderProps) => {
+  const [themeIsDark, setThemeIsDark] = useState<boolean | null>(themeDark);
   const router = useRouter();
   const setDarkTheme = (value: boolean) =>
     localStorage.setItem("darkTheme", JSON.stringify(value));
 
-  // useEffect(() => {
-  //   const isDarkThemeSet = getStorage("session", "darkTheme");
-  //   if (isDarkThemeSet) {
-  //     // setThemeIsDark(isDarkTheme);
-  //     setThemeDark(isDarkTheme);
-  //   } else {
-  //     setDarkTheme(true);
-  //   }
-  // }, []);
-  const headerItems = [
-    { text: "Home", path: "/" },
-    { text: "About", path: "/about" },
-    { text: "Skills", path: "/skills" },
-    { text: "Education", path: "/education" },
-    { text: "Experience", path: "/experience" },
-    { text: "Projects", path: "/projects" },
-    { text: "Resume", path: "/resume" },
-  ];
   const handleRoute = (pathName: string) => router.push(pathName);
+
+  console.log(headerItems);
   return (
     <div className="bg-[#28242c] w-full h-tenPercent flex justify-end items-center pr-6 gap-6 text-xl font-mono">
       {headerItems.map((item, index) => (
         <div
           key={index}
           className="group"
-          onClick={() => handleRoute(item.path)}
+          onClick={() =>
+            item.text === "Resume"
+              ? downloadFile("resume.pdf", "Marius Palade Resume")
+              : handleRoute(item.path)
+          }
         >
           <div className="cursor-pointer text-gray-300 hover:text-white">
             {item.text}

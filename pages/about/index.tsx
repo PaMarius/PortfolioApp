@@ -1,11 +1,11 @@
-"use client";
-
 import { AboutPage } from "@/components/AboutPage";
 import { getDarkThemeProps } from "@/utils/getDarkThemeProps";
+import { getStorage } from "@/utils/getStorage";
 import { useState } from "react";
 
 export default function About() {
-  const [themeDark, setThemeDark] = useState<boolean>(true);
+  const isDarkTheme = getStorage<boolean>("local", "darkTheme", "boolean");
+  const [themeDark, setThemeDark] = useState<boolean | null>(isDarkTheme);
 
   return (
     <div className={`h-screen text-center ${getDarkThemeProps(themeDark)}`}>
