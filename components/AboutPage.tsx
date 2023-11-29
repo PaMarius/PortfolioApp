@@ -10,7 +10,7 @@ export const AboutPage = ({ setThemeDark, themeDark }: AboutPageProps) => {
   return (
     <div className="flex flex-col h-full w-full justify-center items-center">
       <NewHeader setThemeDark={setThemeDark} themeDark={themeDark} />
-      <div className="w-full h-bodyContent">About page</div>
+      <div className="w-full h-bodyContent"></div>
     </div>
   );
 };
